@@ -9,64 +9,184 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
+
     <title>Anastasiia Bezpiatchuk - Homepage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f3ff;
+            margin: 0;
+            padding: 30px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #6941c6;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #6941c6;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 20px 0;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
 </head>
 
-<body style="font-family: Arial; max-width: 700px;
-             margin: 50px auto; line-height: 1.6;">
+<body>
+
+<div class="container">
 
     <main about="https://example.org/knoweng/myprofile#me"
           typeof="foaf:Person schema:Person">
 
-        <h1 property="foaf:name schema:name">
-            Anastasiia Bezpiatchuk
-        </h1>
+        <div class="profile">
+
+            <h1 property="foaf:name schema:name">
+                Anastasiia Bezpiatchuk
+            </h1>
+
+            <div rel="foaf:img"
+                 resource="https://motorikk.github.io/my-homepage/me.jpg">
+                <img src="me.jpg"
+                     alt="Photo of Anastasiia Bezpiatchuk">
+            </div>
+
+            <p>Student | Knowledge Engineering</p>
+
+        </div>
 
         <h2>About Me</h2>
+
         <p>
-            Welcome to my personal homepage!
-            I am a student studying Knowledge Engineering.
+            Hello! My name is Anastasiia Bezpiatchuk.
+            Welcome to my personal homepage.
+            I am currently studying Knowledge
+            Engineering (KnowEng).
         </p>
 
         <h2>Education</h2>
+
         <div rel="schema:affiliation">
-            <span typeof="schema:CollegeOrUniversity"
-                  about="https://www.uniba.sk/">
-                <span property="schema:name">
+            <div about="https://www.uniba.sk/"
+                 typeof="schema:CollegeOrUniversity">
+
+                <p property="schema:name">
                     Comenius University in Bratislava
-                </span>
-            </span>
+                </p>
+
+            </div>
         </div>
 
         <h2>My Course</h2>
+
         <div rel="schema:hasCourse">
-            <div typeof="schema:Course"
-                 about="https://example.org/knoweng/course">
-                <span property="schema:name">
+            <div about="https://example.org/knoweng/course"
+                 typeof="schema:Course">
+
+                <p property="schema:name">
                     Knowledge Engineering (KnowEng)
-                </span>
+                </p>
+
             </div>
         </div>
 
         <h2>My Homepage</h2>
+
         <p>
-            This page was created as part of
-            my RDF laboratory assignment.
+            This website was created as part of
+            my RDF and Semantic Web laboratory assignment.
         </p>
 
-        <link property="foaf:homepage"
-              href="https://motorikk.github.io/my-homepage/">
+        <p>
+            <a rel="foaf:homepage"
+               href="https://motorikk.github.io/my-homepage/">
+                Visit my homepage
+            </a>
+        </p>
+
     </main>
 
-    <footer about="https://motorikk.github.io/my-homepage/">
+    <section about="https://motorikk.github.io/my-homepage/"
+             typeof="foaf:Document schema:WebPage">
+
+        <h2>Website Information</h2>
+
         <p>
-            Created by
-            <span rel="dcterms:creator"
-                  resource="https://example.org/knoweng/myprofile#me">
+            Created by:
+            <a rel="dcterms:creator"
+               href="https://example.org/knoweng/myprofile#me">
                 Anastasiia Bezpiatchuk
+            </a>
+        </p>
+
+    </section>
+
+    <section about="https://motorikk.github.io/my-homepage/me.jpg"
+             typeof="schema:ImageObject">
+
+        <h2>Photo Information</h2>
+
+        <p>
+            Photograph of Anastasiia Bezpiatchuk.
+        </p>
+
+        <p>
+            Photographer:
+            <span rel="schema:photographer"
+                  resource="https://example.org/knoweng/photographer">
+                <span about="https://example.org/knoweng/photographer"
+                      typeof="schema:Person">
+                    <span property="schema:name">
+                        Unknown Photographer
+                    </span>
+                </span>
             </span>
         </p>
+
+    </section>
+
+    <footer>
+        <p>
+            RDF Laboratory - Knowledge Engineering
+        </p>
     </footer>
+
+</div>
 
 </body>
 </html>
