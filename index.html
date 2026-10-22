@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en"
+      prefix="foaf: http://xmlns.com/foaf/0.1/
+              schema: https://schema.org/
+              dcterms: http://purl.org/dc/terms/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Anastasiia Bezpiatchuk - Homepage</title>
+</head>
+
+<body style="font-family: Arial; max-width: 700px;
+             margin: 50px auto; line-height: 1.6;">
+
+    <main about="https://example.org/knoweng/myprofile#me"
+          typeof="foaf:Person schema:Person">
+
+        <h1 property="foaf:name schema:name">
+            Anastasiia Bezpiatchuk
+        </h1>
+
+        <h2>About Me</h2>
+        <p>
+            Welcome to my personal homepage!
+            I am a student studying Knowledge Engineering.
+        </p>
+
+        <h2>Education</h2>
+        <div rel="schema:affiliation">
+            <span typeof="schema:CollegeOrUniversity"
+                  about="https://www.uniba.sk/">
+                <span property="schema:name">
+                    Comenius University in Bratislava
+                </span>
+            </span>
+        </div>
+
+        <h2>My Course</h2>
+        <div rel="schema:hasCourse">
+            <div typeof="schema:Course"
+                 about="https://example.org/knoweng/course">
+                <span property="schema:name">
+                    Knowledge Engineering (KnowEng)
+                </span>
+            </div>
+        </div>
+
+        <h2>My Homepage</h2>
+        <p>
+            This page was created as part of
+            my RDF laboratory assignment.
+        </p>
+
+        <link property="foaf:homepage"
+              href="https://motorikk.github.io/my-homepage/">
+    </main>
+
+    <footer about="https://motorikk.github.io/my-homepage/">
+        <p>
+            Created by
+            <span rel="dcterms:creator"
+                  resource="https://example.org/knoweng/myprofile#me">
+                Anastasiia Bezpiatchuk
+            </span>
+        </p>
+    </footer>
+
+</body>
+</html>
